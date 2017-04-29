@@ -1,0 +1,117 @@
+/* ---------------------------------------------------------------
+    Typography
+------------------------------------------------------------------*/
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    background-color: rgba(254, 255, 183, 0.22);
+}
+
+.myInput input {
+    font-size: 2.8em;
+    text-align: right;
+    padding-right: 10px;
+    background-color: #8B8B8B;
+    color: white;
+    font-weight: 300;
+}
+
+.btn {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+
+
+
+/* ---------------------------------------------------------------
+    Global Styles
+------------------------------------------------------------------*/
+
+.row {
+    margin-bottom: 0;
+}
+
+.btn-numbers, #btn-point, .btn-lightgray {
+    background-color: #e8e8e8;
+}
+
+.btn-notNumbers {
+    background-color: #D6D6D6;
+}
+
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+.col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12,
+.col-sm-1, .col-sm-2, .col-sm-7, .col-sm-10{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+#rad-deg {
+    margin-top: -30px;
+    margin-left: 15px;
+    color: white;
+    font-size: small;
+    display: none;
+}
+
+textarea, .btn-programmer {
+    background-color: #bababa;
+    border: 0;
+}
+
+.btn-base {
+    font-size: small;
+    padding: 3px 6px;
+}
+
+.btn-programmer {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 1px;
+    border-right: 2px solid white;
+    padding-top: 10px;
+}
+
+
+/* ---------------------------------------------------------------
+    Media Queries
+------------------------------------------------------------------*/
+/* Large devices Desktops  */
+.container {
+    font-size: 1.3em;
+    width: 80%;
+    margin-top: 10%;
+}
+
+/* Medium devices Desktops */
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Small devices Tablets */
+@media screen and (max-width: 992px) {
+    .container {
+        width: 100%;
+        padding-left: 8%;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 767px) {
+    .container {
+        width: 55%;
+        font-size: 1.5em;
+        padding-left: 15px;
+    }
+}
+
+/* Extra extra small devices */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 80%;
+    }
+}

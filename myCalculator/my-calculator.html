@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<main class="container hidden-sm">
+    <div class="row myInput">
+        <div class="col-sm-1 hidden-xs"></div>
+        <div class="col-xs-12 col-sm-10">
+            <input type="text" name="input" id="input" class="btn-block" value="0">
+            <span class="pull-left" id="rad-deg">Rad</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 hidden-xs"></div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers">(</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers">)</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers">mc</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers">m+</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers">m-</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers">mr</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers" id="btnC">C</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers" id="btn-sign"><sup>+</sup>/-</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">%</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-warning btn-block btn-operations">&div;</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 hidden-xs"></div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers" id="2nd-functions">2<sup>nd</sup></button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">x<sup>2</sup></button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">x<sup>3</sup></button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">e<sup>x</sup></button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-operations btn-2nd-functions">x<sup>y</sup></button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">10<sup>x</sup></button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">7</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">8</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">9</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-warning btn-block btn-operations">x</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 hidden-xs"></div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions"><sup>1</sup>&frasl;<sub>x</sub></button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions"><sup>2</sup>&Sqrt;x</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions"><sup>3</sup>&Sqrt;x</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">ln</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-operations btn-2nd-functions"><sup>y</sup>&Sqrt;x</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">log<sub>10</sub></button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">4</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">5</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">6</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-warning btn-block btn-operations">-</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 hidden-xs"></div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">x!</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">sin</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">cos</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">tan</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">e</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">EE</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">1</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">2</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block btn-numbers">3</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-warning btn-block btn-operations">+</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 hidden-xs"></div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers" id="btn-rad_deg">Rad</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">sinh</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">cosh</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions btn-2nd-functions">tanh</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">&pi;</button>
+        </div>
+        <div class="col-sm-1 hidden-xs">
+            <button class="btn btn-default btn-block btn-notNumbers btn-functions">Rand</button>
+        </div>
+        <div class="col-xs-6 col-sm-2">
+            <button class="btn btn-default btn-block btn-numbers">0</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-default btn-block" id="btn-point">.</button>
+        </div>
+        <div class="col-xs-3 col-sm-1">
+            <button class="btn btn-warning btn-block" id="btn-result">=</button>
+        </div>
+    </div>
+
+</main>
+
+<!-- Programmer calculator -->
+<div class="container visible-sm-block">
+
+    <div class="row myInput">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+            <input type="text" name="input" id="input-programmer" class="btn-block" value="0">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7 btn-programmer">
+            <div >
+                <button type="button" class="btn btn-danger btn-base">ASCII</button>
+                <button type="button" class="btn btn-danger btn-base">Unicode</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-danger btn-base">Hide Binary</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-danger btn-base">8</button>
+                <button type="button" class="btn btn-danger btn-base">10</button>
+                <button type="button" class="btn btn-danger btn-base">16</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+            <textarea name="my-textarea" id="my-textarea" class="btn-block" rows="4"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">AND</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">OR</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">D</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">E</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">F</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">AC</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">C</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">NOR</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">XOR</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">A</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">B</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">C</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">RoL</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">RoR</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers"> << </button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers"> >> </button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">7</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">8</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">9</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">2's</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">1's</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">X<small><<</small>Y</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-notNumbers">X<small>>></small>Y</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">4</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">5</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">6</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-warning btn-block">&div;</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-warning btn-block">-</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <button class="btn btn-default btn-block btn-notNumbers">byte flip</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">1</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">2</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">3</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-warning btn-block">x</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-warning btn-block">+</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <button class="btn btn-default btn-block btn-notNumbers">word flip</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">FF</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">0</button>
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default btn-block btn-lightgray">00</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-warning btn-block">=</button>
+        </div>
+    </div>
+
+</div>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/common.js"></script>
+</body>
+</html>

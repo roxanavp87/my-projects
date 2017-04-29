@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Tic Tac Toe Game</h1>
+</header>
+
+<main class="container-fluid">
+    <div id="game">
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div data-index="0" data-position= "11" class="col-xs-2 box"></div>
+            <div data-index="1" data-position= "12" class="col-xs-2 box"></div>
+            <div data-index="2" data-position= "13" class="col-xs-2 box"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div data-index="3" data-position= "21" class="col-xs-2 box"></div>
+            <div data-index="4" data-position= "22" class="col-xs-2 box"></div>
+            <div data-index="5" data-position= "23" class="col-xs-2 box"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div data-index="6" data-position= "31" class="col-xs-2 box"></div>
+            <div data-index="7" data-position= "32" class="col-xs-2 box"></div>
+            <div data-index="8" data-position= "33" class="col-xs-2 box"></div>
+        </div>
+    </div>
+    <div class="game-over">
+        <span id="winner" style="font-size: 120px"></span>
+        <br>
+        <span style="font-size: 25px">WINNER!</span>
+    </div>
+</main>
+
+<footer>
+    <button class="btn btn-success btn-lg btn-block" id="start">Start game!</button>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

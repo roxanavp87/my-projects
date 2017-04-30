@@ -5,16 +5,31 @@
     <title>Tic Tac Toe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Tic Tac Toe Game</h1>
+    <h1>Tic Tac Toe</h1>
 </header>
 
 <main class="container-fluid">
+    <!-- Single button -->
+    <div class="btn-group">
+        <button type="button" class="menu btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Easy <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="easy" href="#">Easy</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a class="medium" href="#">Medium</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a class="impossible" href="#">Impossible</a></li>
+        </ul>
+    </div>
+
     <div id="game">
         <div class="row">
             <div class="col-xs-3"></div>

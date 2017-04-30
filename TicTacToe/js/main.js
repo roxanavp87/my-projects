@@ -247,7 +247,7 @@ $('document').ready(function () {
         countX++;
     }
 
-    function meddium() {
+    function medium() {
         if (countX === 0) {
             easy();
         } else if (countX === 1) {
@@ -277,6 +277,26 @@ $('document').ready(function () {
             }
         }
     }
+    
+    function impossible() {
+        console.log('impossible')
+    }
+
+    function checkIfTherIsAWinner() {
+        if (Xpositions.length > 2) { // If there is at least 3 "Xs"
+            if (checkConditionToWin(Xpositions) || checkConditionToWin(Opositions)) {
+                gameOver = true;
+                if(checkConditionToWin(Xpositions)) {
+                    $('#winner').text('X');
+                } else {
+                    $('#winner').text('O');
+                }
+
+                $('#game').delay(2000).slideToggle();
+                $('.game-over').delay(2000).slideToggle();
+            }
+        }
+    }
 
 
     $('.box').click(function () {
@@ -291,32 +311,23 @@ $('document').ready(function () {
                 counter++;
                 Xpositions[countX] = $(this).attr('data-position');
 
-
-
-                if (Xpositions.length > 2) { // If there is at least 3 "Xs"
-                    if (checkConditionToWin(Xpositions) || checkConditionToWin(Opositions)) {
-                        gameOver = true;
-                        if(checkConditionToWin(Xpositions)) {
-                            $('#winner').text('X');
-                        } else {
-                            $('#winner').text('O');
-                        }
-
-                        $('#game').delay(2000).slideToggle();
-                        $('.game-over').delay(2000).slideToggle();
-                    }
-                }
+                checkIfTherIsAWinner();
 
                 if(!gameOver) {
-                    // easy();
-                    meddium();
+                    if($('.menu').text() === 'Easy ') {
+                        easy();
+                    } else if($('.menu').text() === 'Medium ') {
+                        medium();
+                    } else {
+                        impossible();
+                    }
+
+                    checkIfTherIsAWinner();
 
                     console.log(positionNotValid);
                     console.log(Xpositions);
                     console.log(Opositions);
                 }
-
-
 
             } else {
                 console.log('Position not valid');
@@ -348,7 +359,21 @@ $('document').ready(function () {
         $('.box').each(function (index, element) {
             $(this).text('');
         });
+    });
 
+    $('.easy').click(function (event) {
+        event.preventDefault();
+        $('.menu').html('Easy <span class="caret">');
+    });
+
+    $('.medium').click(function (event) {
+        event.preventDefault();
+        $('.menu').html('Medium <span class="caret">');
+    });
+
+    $('.impossible').click(function (event) {
+        event.preventDefault();
+        $('.menu').html('Impossible <span class="caret">');
     });
 
 });

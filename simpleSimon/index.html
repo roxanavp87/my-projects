@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <title>Simple Simon</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
 <body>
 <main class="container">
-    <div class="red-blue">
+    <div class="wrapper">
         <div id="red" class="shapes"></div>
         <div id="blue" class="shapes"></div>
     </div>
 
-    <div class="start-wrapper">
-        <div id="start">Start</div>
+    <!--<div class="middle">-->
+        <!--&lt;!&ndash;<p>SIMON</p>&ndash;&gt;-->
+        <!--<div class="wrapper">-->
+            <!--<input id="round" type="text" value="0" readonly>-->
+            <!--<div id="start">START</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="wrapper">
+        <button id="start" class="btn btn-success">START</button>
     </div>
 
-    <div class="green-yellow">
+    <div class="wrapper">
         <div id="green" class="shapes"></div>
         <div id="yellow" class="shapes"></div>
     </div>
+
+
 </main>
 
 <script
@@ -28,6 +38,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous">
  </script>
+<script src="js/bootstrap.min.js"></script>
 
 <script src="js/main.js"></script>
 

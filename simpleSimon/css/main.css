@@ -14,19 +14,15 @@ body, html {
     margin-left: auto;
 }
 
-.red-blue {
+.wrapper {
     display: flex;
     justify-content: center;
 }
 
-.green-yellow {
-    display: flex;
-    justify-content: center;
-}
 
 .shapes {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 150px;
     margin: 0 10px;
 }
 
@@ -54,16 +50,31 @@ body, html {
     transform: rotate(10deg);
 }
 
-.start-wrapper {
+
+#start {
+    text-align: center;
+    border-radius: 50%;
+    background-color: chartreuse;
+    color: white;
+    font-size: 25px;
+    border: 3px solid green;
+    overflow: hidden;
+    margin: 10px 0;
+    height: 100px;
+    width: 150px;
+}
+
+.middle {
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
 }
 
-#start {
-    display: flex;
-    justify-content: center;
-    border-radius: 80px;
-    border: 1px solid black;
-    width: 70px;
-    height: 70px;
+#round {
+    border-radius: 25px;
+    width: 50px;
+    font-size: 20px;
 }

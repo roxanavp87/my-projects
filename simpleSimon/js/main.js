@@ -105,6 +105,7 @@ $('document').ready(function () {
 
                     } else {
                         $('#text').html('GAME OVER!');
+                        $('.audio').attr('src', 'sounds/' + sounds[5]).get(0).play();
                         gameOver = true;
                         $('#round').val('!!').css('left', '63%');
                         reset();

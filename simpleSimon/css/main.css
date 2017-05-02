@@ -15,12 +15,22 @@ body {
     background-image: url("../img/wooden_nav.jpg");
     /*border: 1px solid saddlebrown;*/
     box-shadow: 0 -1px 20px 7px saddlebrown;
+    position: relative;
 }
 
 .menu {
     background-color: #4a4a4a;
     color: white;
     font-weight: 500;
+}
+
+#text {
+    font-family: 'Wendy One', sans-serif;
+    color: #966343;
+    position: absolute;
+    top: 13px;
+    left: 155px;
+    font-size: 20px;
 }
 
 .container {
@@ -48,6 +58,7 @@ body {
     height: 200px;
     margin: 10px;
     z-index: 0;
+    cursor: pointer;
 }
 
 #red {
@@ -113,7 +124,7 @@ body {
     font-size: 20px;
     position: absolute;
     top: 87px;
-    left: 55%;
+    left: 57%;
     z-index: 2;
     text-align: center;
     background-color: black;

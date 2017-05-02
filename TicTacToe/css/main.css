@@ -20,6 +20,7 @@ html, body {
     font-size: 80px;
     border: 2px solid white;
     color: #ee3336;
+    cursor: pointer;
 }
 
 h1 {

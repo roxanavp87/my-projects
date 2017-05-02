@@ -24,12 +24,22 @@ body {
     font-weight: 500;
 }
 
+.menu:hover {
+    background-color: #F8E1C2;
+    color: #966343;
+}
+
+.menu-click {
+    background-color: #966343;
+    color: white;
+}
+
 #text {
     font-family: 'Wendy One', sans-serif;
     color: #966343;
     position: absolute;
     top: 13px;
-    left: 155px;
+    left: 170px;
     font-size: 20px;
 }
 

@@ -4,14 +4,15 @@
 
 $('document').ready(function () {
 
-    var sequence = [];
+    var sequence = [], colors = [];
     var random;
     var index = 0, counter = 0, round = 1;
     var gameOver = false;
     var displayingColor = false;
     var on = false, off = true;
-
+    var animateInterval = 1000; //to change the game level -> 1000 ms for easy, 600ms for medium and 300 ms for insane
     var index_seq = 0;
+    var sounds = ['a_sharp.mp3', 'f_sharp.mp3', 'c_sharp.mp3', 'd_sharp.mp3', 'gameON.mp3', 'gameOFF.mp3'];
 
     function numToColor(number, index) {
         switch (number) {
@@ -31,7 +32,8 @@ $('document').ready(function () {
     }
 
     function animateBoxes() {
-        $('#' + sequence[index_seq]).animate({opacity: 0.2}, 600).animate({opacity: 1}, 400, function () {
+        $('.audio').attr('src', 'sounds/' + sounds[colors[index_seq]]).get(0).play();
+        $('#' + sequence[index_seq]).animate({opacity: 0.2}, animateInterval).animate({opacity: 1}, 500, function () {
             index_seq++;
             if(index_seq < sequence.length) {
                 animateBoxes();
@@ -47,6 +49,7 @@ $('document').ready(function () {
         $('#text').html('Watch the sequence!');
         displayingColor = true;
         random = Math.round(Math.random()*3);
+        colors[index] = random;
         numToColor(random, index);
         index++;
         console.log(sequence);
@@ -58,6 +61,7 @@ $('document').ready(function () {
         index = 0;
         counter = 0;
         sequence = [];
+        colors = [];
         round = 1;
         displayingColor = false;
         on = false;
@@ -86,7 +90,7 @@ $('document').ready(function () {
 
         if(on && !off && !displayingColor) {
 
-            $(this).animate({opacity: 0.2}, 600).animate({opacity: 1}, 400, function () {
+            $(this).animate({opacity: 0.2}, animateInterval).animate({opacity: 1}, 500, function () {
 
                 if (counter < index) {
                     if ($(this).attr('id') === sequence[counter]) {
@@ -116,6 +120,7 @@ $('document').ready(function () {
     $('#on').click(function () {
         on = true;
         off = false;
+        $('.audio').attr('src', 'sounds/' + sounds[4]).get(0).play();
         $('#text').html('Click START to begin!');
         $('#start').prop('disabled', false);
     });
@@ -128,6 +133,26 @@ $('document').ready(function () {
         $('#text').html('Click ON to begin!');
     });
 
+    $('.menu').click(function () {
+        $(this).toggleClass('menu-click');
+    });
 
+    $('.easy').click(function (event) {
+        event.preventDefault();
+        $('.menu').html('Easy <span class="caret">');
+        animateInterval = 1000;
+    });
+
+    $('.medium').click(function (event) {
+        event.preventDefault();
+        $('.menu').html('Medium <span class="caret">');
+        animateInterval = 600;
+    });
+
+    $('.insane').click(function (event) {
+        event.preventDefault();
+        $('.menu').html('Insane <span class="caret">');
+        animateInterval = 300;
+    });
 
 });

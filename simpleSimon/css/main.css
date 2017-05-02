@@ -6,12 +6,23 @@ body, html {
     padding: 0;
 }
 
+body {
+    background-image: url("../img/wood_background.jpg");
+    background-size: cover;
+}
+
 .container {
-    width: 90%;
-    height: 400px;
+    width: 450px;
+    height: 460px;
     margin-top: 60px;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
+    border: 10px solid #4a4a4a;
+    border-radius: 50%;
+    box-shadow: 0px -1px 20px 7px #888888;
+    background-color: #4a4a4a;
+    padding: 0;
 }
 
 .wrapper {
@@ -21,60 +32,104 @@ body, html {
 
 
 .shapes {
-    width: 160px;
-    height: 150px;
-    margin: 0 10px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    z-index: 0;
 }
 
 #red {
     background-color: red;
-    border-radius: 0 60px 0 60px;
-    transform: rotate(10deg);
+    border-top-left-radius: 100%;
 }
 
 #blue {
     background-color: blue;
-    border-radius: 60px 0 60px 0;
-    transform: rotate(-10deg);
+    border-top-right-radius: 100%;
 }
 
 #green {
     background-color: green;
-    border-radius: 60px 0 60px 0;
-    transform: rotate(-10deg);
+    border-bottom-left-radius: 100%;
 }
 
 #yellow {
     background-color: yellow;
-    border-radius: 0 60px 0 60px;
-    transform: rotate(10deg);
+    border-bottom-right-radius: 100%;
 }
 
+
+.inner-circle {
+    border-radius: 50%;
+    font-size: 25px;
+    border: 10px solid #4a4a4a;
+    height: 215px;
+    width: 215px;
+    position: absolute;
+    top: 108px;
+    left: 25%;
+    z-index: 1;
+}
+
+#simon {
+    font-family: 'Bungee Inline', cursive;
+    position: absolute;
+    top: 20px;
+    left: 20%;
+    z-index: 2;
+    font-size: 30px;
+}
+
+#simon span {
+    font-size: 45px;
+}
 
 #start {
-    text-align: center;
     border-radius: 50%;
-    background-color: chartreuse;
-    color: white;
-    font-size: 25px;
-    border: 3px solid green;
-    overflow: hidden;
-    margin: 10px 0;
-    height: 100px;
-    width: 150px;
-}
-
-.middle {
-    border: 3px solid black;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 87px;
+    left: 13%;
+    z-index: 2;
+    font-size: 17px;
+    padding: 3px 6px;
 }
 
 #round {
     border-radius: 25px;
-    width: 50px;
+    width: 60px;
     font-size: 20px;
+    position: absolute;
+    top: 87px;
+    left: 55%;
+    z-index: 2;
+    text-align: center;
+    background-color: black;
+    color: red;
 }
+
+#on {
+    font-size: 17px;
+    position: absolute;
+    top: 136px;
+    left: 51%;
+    z-index: 2;
+    background-color: rgba(0, 204, 0, 0.64);
+    color: darkgreen;
+    font-weight: bold;
+    padding: 3px 6px;
+}
+
+#off {
+    font-size: 17px;
+    position: absolute;
+    top: 136px;
+    left: 28%;
+    z-index: 2;
+    background-color: rgba(74, 74, 74, 0.64);
+    color: rgba(254, 255, 183, 0.53);
+    font-weight: bold;
+    padding: 3px 6px;
+}
+
+
+

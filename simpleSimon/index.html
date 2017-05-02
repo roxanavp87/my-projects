@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Simon</title>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
+
+
+
 <main class="container">
+
+    <div class="btn btn-default inner-circle">
+        <span id="simon"><span>S</span>IMON</span>
+        <button id="start" class="btn btn-danger">START</button>
+        <input id="round" type="text" value="0" readonly>
+        <button id="off" class="btn btn-default">OFF</button>
+        <button id="on" class="btn btn-default">ON</button>
+    </div>
+
     <div class="wrapper">
         <div id="red" class="shapes"></div>
         <div id="blue" class="shapes"></div>
-    </div>
-
-    <!--<div class="middle">-->
-        <!--&lt;!&ndash;<p>SIMON</p>&ndash;&gt;-->
-        <!--<div class="wrapper">-->
-            <!--<input id="round" type="text" value="0" readonly>-->
-            <!--<div id="start">START</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <div class="wrapper">
-        <button id="start" class="btn btn-success">START</button>
     </div>
 
     <div class="wrapper">
         <div id="green" class="shapes"></div>
         <div id="yellow" class="shapes"></div>
     </div>
+
+
+
 
 
 </main>

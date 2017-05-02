@@ -7,8 +7,20 @@ body, html {
 }
 
 body {
-    background-image: url("../img/wood_background.jpg");
+    background-image: url("../img/wooden.jpg");
     background-size: cover;
+}
+
+.my-nav {
+    background-image: url("../img/wooden_nav.jpg");
+    /*border: 1px solid saddlebrown;*/
+    box-shadow: 0 -1px 20px 7px saddlebrown;
+}
+
+.menu {
+    background-color: #4a4a4a;
+    color: white;
+    font-weight: 500;
 }
 
 .container {
@@ -20,7 +32,7 @@ body {
     position: relative;
     border: 10px solid #4a4a4a;
     border-radius: 50%;
-    box-shadow: 0px -1px 20px 7px #888888;
+    box-shadow: 0 -1px 20px 2px saddlebrown;
     background-color: #4a4a4a;
     padding: 0;
 }
@@ -61,6 +73,7 @@ body {
 
 .inner-circle {
     border-radius: 50%;
+    background-color: white;
     font-size: 25px;
     border: 10px solid #4a4a4a;
     height: 215px;

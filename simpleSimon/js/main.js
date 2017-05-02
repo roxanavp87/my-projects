@@ -6,10 +6,11 @@ $('document').ready(function () {
 
     var sequence = [];
     var random;
-    var index = 0, counter = 0;
+    var index = 0, counter = 0, round = 1;
     // var gameOver = false;
     // var displayingSequence = false;
     // var displayingColor = false;
+    var on = false, off = true;
 
     var index_seq = 0;
 
@@ -55,40 +56,56 @@ $('document').ready(function () {
         index = 0;
         counter = 0;
         sequence = [];
+        round = 1;
     }
 
     $('#start').click(function () {
-        addColorToSequence();
+        if(on && !off) {
+            addColorToSequence();
+            $('#round').val(round);
+        }
     });
 
     $('.shapes').click(function () {
 
-        // if(!displayingSequence) {
+        if(on && !off) {
 
             $(this).animate({opacity: 0.2}, 600).animate({opacity: 1}, 400, function () {
-
                 console.log('animating box ' + $(this).attr('id'));
+
                 if (counter < index) {
                     if ($(this).attr('id') === sequence[counter]) {
                         counter++;
                         if (counter === index) {
                             console.log('success');
-
+                            round++;
+                            $('#round').val(round);
                             addColorToSequence();
-
                             counter = 0;
                         }
 
                     } else {
                         console.log('game over');
+                        $('#round').val('!!');
                         reset();
                     }
                 }
             });
 
+        }
 
-        // }
+    });
 
+    $('#on').click(function () {
+        on = true;
+        off = false;
+    });
+
+    $('#off').click(function () {
+        on = false;
+        off = true;
+        reset();
+        $('#round').val(0);
     });
 
 });

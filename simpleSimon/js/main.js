@@ -10,9 +10,9 @@ $('document').ready(function () {
     var gameOver = false;
     var displayingColor = false;
     var on = false, off = true;
-    var animateInterval = 1000; //to change the game level -> 1000 ms for easy, 600ms for medium and 300 ms for insane
+    var animateInterval = 400;
     var index_seq = 0;
-    var sounds = ['a_sharp.mp3', 'f_sharp.mp3', 'c_sharp.mp3', 'd_sharp.mp3', 'gameON.mp3', 'gameOFF.mp3'];
+    var sounds = ['a_sharp.mp3', 'f_sharp.mp3', 'd_sharp.mp3', 'c_sharp.mp3', 'gameON.mp3', 'gameOFF.mp3'];
 
     function numToColor(number, index) {
         switch (number) {
@@ -48,10 +48,7 @@ $('document').ready(function () {
         // add a new color to the sequence randomly
         $('#text').html('Watch the sequence!');
         displayingColor = true;
-        random = Math.round(Math.random()*3);
-        colors[index] = random;
-        numToColor(random, index);
-        index++;
+        initSequence(1);
         console.log(sequence);
         index_seq = 0;
         animateBoxes();
@@ -67,6 +64,35 @@ $('document').ready(function () {
         on = false;
         off = true;
     }
+
+    function initSequence(length) {
+        for(var i=0; i<length; i++) {
+            random = Math.round(Math.random()*3);
+            colors[index] = random;
+            numToColor(random, index);
+            index++;
+        }
+        console.log(sequence);
+    }
+
+    function gameOverAnimation() {
+        var deg = 0, left = 10;
+        var max = 360;
+
+        $('.container').css('top','100px').css('box-shadow', '0px 8px 20px 0px saddlebrown');
+
+        var intervalId = setInterval(function () {
+            if (deg >= max) {
+                clearInterval(intervalId);
+                $('.game-over').css('display','block');
+            } else {
+                deg +=10;
+                left+=5;
+                $('.container').css('left', left + '%').css('transform', 'rotate(' + deg +'deg)');
+            }
+        }, 100);
+    }
+
 
     $('#start').click(function () {
 
@@ -106,6 +132,7 @@ $('document').ready(function () {
                     } else {
                         $('#text').html('GAME OVER!');
                         $('.audio').attr('src', 'sounds/' + sounds[5]).get(0).play();
+                        gameOverAnimation();
                         gameOver = true;
                         $('#round').val('!!').css('left', '63%');
                         reset();
@@ -141,19 +168,19 @@ $('document').ready(function () {
     $('.easy').click(function (event) {
         event.preventDefault();
         $('.menu').html('Easy <span class="caret">');
-        animateInterval = 1000;
     });
 
     $('.medium').click(function (event) {
         event.preventDefault();
         $('.menu').html('Medium <span class="caret">');
-        animateInterval = 600;
+        initSequence(4);
     });
 
-    $('.insane').click(function (event) {
+    $('.hard').click(function (event) {
         event.preventDefault();
-        $('.menu').html('Insane <span class="caret">');
-        animateInterval = 300;
+        $('.menu').html('Hard <span class="caret">');
+        animateInterval = 200;
+        initSequence(7);
     });
 
 });

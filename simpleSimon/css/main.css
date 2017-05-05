@@ -180,5 +180,42 @@ footer {
 }
 
 
+@media screen and (max-width: 590px) {
+    #text {
+        top: 7px;
+    }
+
+    .menu {
+        margin-top: 15px;
+    }
+
+    nav.my-nav.container-fluid {
+        height: 73px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .shapes {
+        width: 180px;
+        height: 180px;
+        margin: 5px;
+    }
+
+    .container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .inner-circle {
+        height: 215px;
+        width: 215px;
+        top: 81px;
+        left: 22%;
+    }
+}
+
+
 
 

@@ -3,6 +3,7 @@
  */
 
 $('document').ready(function () {
+    'use strict';
 
     var sequence = [], colors = [];
     var random;
@@ -98,6 +99,7 @@ $('document').ready(function () {
 
         if(on && !off && !gameOver) {
             $('#start').prop('disabled', true);
+            $('.menu').prop('disabled', true);
             addColorToSequence();
             $('#round').val(round);
         }
@@ -109,6 +111,7 @@ $('document').ready(function () {
             gameOver = false;
             on = true;
             off = false;
+            $('.menu').prop('disabled', false);
         }
     });
 
